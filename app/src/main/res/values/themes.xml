@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.FuelTracker" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color - Fuel Blue -->
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_blue_light</item>
+        <item name="colorOnPrimaryContainer">@color/primary_blue_dark</item>
+
+        <!-- Secondary brand color - Energy Orange -->
+        <item name="colorSecondary">@color/secondary_orange</item>
+        <item name="colorOnSecondary">@color/text_on_primary</item>
+        <item name="colorSecondaryContainer">@color/secondary_orange_light</item>
+        <item name="colorOnSecondaryContainer">@color/secondary_orange_dark</item>
+
+        <!-- Tertiary color - Success Green -->
+        <item name="colorTertiary">@color/accent_green</item>
+        <item name="colorOnTertiary">@color/text_on_primary</item>
+        <item name="colorTertiaryContainer">@color/accent_green_light</item>
+        <item name="colorOnTertiaryContainer">@color/accent_green</item>
+
+        <!-- Error color -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/text_on_primary</item>
+        <item name="colorErrorContainer">@color/accent_red_light</item>
+        <item name="colorOnErrorContainer">@color/accent_red</item>
+
+        <!-- Background colors -->
+        <item name="android:colorBackground">@color/background_primary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+
+        <!-- Surface colors -->
+        <item name="colorSurface">@color/surface_primary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/surface_secondary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- Outline colors -->
+        <item name="colorOutline">@color/card_stroke</item>
+        <item name="colorOutlineVariant">@color/divider</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/primary_blue</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:navigationBarColor">@color/nav_background</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+
+        <!-- Button styles -->
+        <item name="materialButtonStyle">@style/Widget.FuelTracker.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.FuelTracker.Button.Outlined</item>
+        <item name="borderlessButtonStyle">@style/Widget.FuelTracker.Button.Text</item>
+
+        <!-- Text field styles -->
+        <item name="textInputStyle">@style/Widget.FuelTracker.TextInputLayout</item>
+
+        <!-- Card view style -->
+        <item name="materialCardViewStyle">@style/Widget.FuelTracker.Card</item>
+
+        <!-- FAB style -->
+        <item name="floatingActionButtonStyle">@style/Widget.FuelTracker.FloatingActionButton</item>
+
+        <!-- Bottom navigation style -->
+        <item name="bottomNavigationStyle">@style/Widget.FuelTracker.BottomNavigation</item>
+    </style>
+</resources>

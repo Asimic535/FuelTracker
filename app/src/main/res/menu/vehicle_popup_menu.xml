@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Opcija za editovanje vozila -->
+    <item
+        android:id="@+id/action_edit_vehicle"
+        android:icon="@drawable/ic_edit"
+        android:title="@string/edit_vehicle" />
+
+    <!-- Opcija za brisanje vozila -->
+    <item
+        android:id="@+id/action_delete_vehicle"
+        android:icon="@drawable/ic_delete"
+        android:title="@string/delete_vehicle" />
+
+</menu>

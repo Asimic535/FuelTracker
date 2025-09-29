@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Read(//Users/dejansmacbook/Documents/**)",
+      "Bash(./gradlew build:*)",
+      "Bash(./gradlew:*)",
+      "Bash(adb logcat:*)",
+      "Bash(timeout 30 adb logcat:*)",
+      "Bash(gtimeout:*)",
+      "WebFetch(domain:console.cloud.google.com)",
+      "Bash(adb:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

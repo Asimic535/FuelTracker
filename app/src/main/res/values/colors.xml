@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Modern Fuel Tracker Color Palette -->
+
+    <!-- Primary Colors - Fuel Blue Theme -->
+    <color name="primary_blue">#1976D2</color>
+    <color name="primary_blue_dark">#0D47A1</color>
+    <color name="primary_blue_light">#42A5F5</color>
+
+    <!-- Secondary Colors - Energy Orange -->
+    <color name="secondary_orange">#FF6F00</color>
+    <color name="secondary_orange_dark">#E65100</color>
+    <color name="secondary_orange_light">#FFB74D</color>
+
+    <!-- Accent Colors -->
+    <color name="accent_green">#4CAF50</color>
+    <color name="accent_green_light">#81C784</color>
+    <color name="accent_red">#F44336</color>
+    <color name="accent_red_light">#EF5350</color>
+
+    <!-- Neutral Colors -->
+    <color name="background_primary">#FAFAFA</color>
+    <color name="background_secondary">#F5F5F5</color>
+    <color name="surface_primary">#FFFFFF</color>
+    <color name="surface_secondary">#F8F9FA</color>
+
+    <!-- Text Colors - poboljšan kontrast -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#424242</color>
+    <color name="text_hint">#424242</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Card and Component Colors -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_stroke">#E0E0E0</color>
+    <color name="divider">#EEEEEE</color>
+    <color name="ripple_color">#1976D226</color>
+
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+
+    <!-- Navigation Colors -->
+    <color name="nav_background">#FFFFFF</color>
+    <color name="nav_selected">#FF6F00</color>
+    <color name="nav_unselected">#9E9E9E</color>
+
+    <!-- Legacy Android Colors (kept for compatibility) -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

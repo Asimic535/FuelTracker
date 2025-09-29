@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FuelTracker</string>
+
+    <!-- Authentication -->
+    <string name="email">Email</string>
+    <string name="password">Lozinka</string>
+    <string name="login">Prijava</string>
+    <string name="register">Registracija</string>
+    <string name="full_name">Ime</string>
+    <string name="confirm_password">Potvrdi lozinku</string>
+    <string name="no_account">Nemate račun? Registrirajte se!</string>
+    <string name="have_account">Već imate račun? Prijavite se!</string>
+    <string name="sign_out">Odjava</string>
+
+    <!-- Navigation -->
+    <string name="home">Početna</string>
+    <string name="vehicles">Vozila</string>
+    <string name="settings">Postavke</string>
+
+    <!-- Vehicle Management -->
+    <string name="add_vehicle">Dodaj vozilo</string>
+    <string name="edit_vehicle">Uredi vozilo</string>
+    <string name="delete_vehicle">Obriši vozilo</string>
+    <string name="vehicle_make">Marka</string>
+    <string name="vehicle_model">Model</string>
+    <string name="vehicle_year">Godina proizvodnje</string>
+    <string name="vehicle_power">Snaga (kW)</string>
+    <string name="fuel_consumption">Potrošnja goriva</string>
+    <string name="fuel_type">Tip goriva</string>
+    <string name="save">Sačuvaj</string>
+    <string name="cancel">Otkaži</string>
+    <string name="delete">Obriši</string>
+    <string name="calculate">Izračunaj</string>
+    <string name="fuel_calculator_title">Kalkulator goriva</string>
+    <string name="distance_km">Udaljenost (km)</string>
+    <string name="calculate_fuel">Izračunaj gorivo</string>
+
+    <!-- Fuel Types -->
+    <string name="gasoline">Benzin</string>
+    <string name="diesel">Dizel</string>
+    <string name="hybrid">Hibrid</string>
+    <string name="electric">Električno</string>
+    <string name="lpg">Plin (LPG)</string>
+
+    <!-- Refueling -->
+    <string name="add_refuel">Dodaj točenje</string>
+    <string name="fuel_amount">Količina goriva (L)</string>
+    <string name="refuel_date">Datum</string>
+    <string name="select_vehicle">Odaberi vozilo</string>
+    <string name="select_date">Odaberite datum</string>
+
+    <!-- Price related strings -->
+    <string name="price_per_liter">Cijena po litru</string>
+    <string name="total_cost">Ukupni trošak</string>
+    <string name="total_cost_input">Ukupna cijena (KM)</string>
+    <string name="calculated_liters">Izračunati litri</string>
+    <string name="estimated_range">Procijenjeni domet</string>
+    <string name="invalid_price">Unesite ispravnu cijenu</string>
+    <string name="max_price_per_liter">Maksimalna cijena je 10 KM/L</string>
+    <string name="max_total_cost">Maksimalna ukupna cijena je 10.000 KM</string>
+    <string name="helper_total_cost">ukupna cijena tankovanja</string>
+
+    <!-- Home Screen -->
+    <string name="welcome">Dobrodošli, %1$s!</string>
+    <string name="total_fuel">Ukupno goriva</string>
+    <string name="filter_period">Filtriraj po periodu</string>
+    <string name="filter_vehicle">Filtriraj po vozilu</string>
+    <string name="all_vehicles">Sva vozila</string>
+    <string name="this_month">Ovaj mjesec</string>
+    <string name="this_year">Ova godina</string>
+    <string name="all_time">Od početka</string>
+
+    <!-- Messages -->
+    <string name="email_required">E-pošta je obavezna</string>
+    <string name="invalid_email">Unesite ispravnu e-poštu</string>
+    <string name="password_required">Lozinka je obavezna</string>
+    <string name="password_min_length">Lozinka mora imati najmanje 6 znakova</string>
+    <string name="name_required">Ime je obavezno</string>
+    <string name="passwords_dont_match">Lozinke se ne podudaraju</string>
+    <string name="login_error">Greška pri prijavi: %1$s</string>
+    <string name="register_error">Greška pri registraciji: %1$s</string>
+    <string name="error">Greška: %1$s</string>
+
+    <!-- Empty States -->
+    <string name="no_vehicles">Odaberi vozilo</string>
+    <string name="no_refuels">Nema zapisa o točenju.\nPrvo dodajte vozilo, zatim pratite gorivo!</string>
+
+    <!-- Confirmation -->
+    <string name="delete_vehicle_title">Potvrda brisanja</string>
+    <string name="delete_vehicle_message">Jeste li sigurni da želite obrisati %1$s %2$s?\n\nTime će se obrisati i sva točenja povezana s ovim vozilom.</string>
+
+    <!-- Validation -->
+    <string name="field_required">Ovo polje je obavezno</string>
+    <string name="invalid_number">Unesite ispravan broj</string>
+
+    <!-- Vehicle Visibility -->
+    <string name="private_vehicles">Moja vozila</string>
+    <string name="vehicle_privacy">Privatnost vozila</string>
+
+    <!-- Vehicle Actions -->
+    <string name="only_owner_can_edit">Samo vlasnik može uređivati ovo vozilo</string>
+    <string name="only_owner_can_delete">Samo vlasnik može obrisati ovo vozilo</string>
+
+    <!-- Permission Messages -->
+    <string name="permission_denied">Dozvola odbijena</string>
+    <string name="you_can_only_edit_own_vehicles">Možete uređivati samo vlastita vozila</string>
+    <string name="you_can_only_delete_own_vehicles">Možete brisati samo vlastita vozila</string>
+
+    <!-- EditVehicle Fragment -->
+    <string name="add_vehicle_title">Dodavanje vozila</string>
+    <string name="edit_vehicle_title">Uređivanje vozila</string>
+    <string name="vehicle_added_successfully">Vozilo je uspješno dodano</string>
+    <string name="vehicle_updated_successfully">Vozilo je uspješno ažurirano</string>
+
+    <!-- Home Fragment -->
+    <string name="month">Ovaj mjesec</string>
+    <string name="year">Ova godina</string>
+
+    <!-- Validation Messages -->
+    <string name="max_fuel_amount">Maksimalno je dozvoljeno 1000 litara</string>
+    <string name="select_valid_vehicle">Odaberite važeće vozilo</string>
+    <string name="invalid_vehicle_year">Neispravna godina vozila</string>
+    <string name="invalid_engine_power">Neispravna snaga motora</string>
+
+    <!-- Additional Messages -->
+    <string name="loading">Učitavanje...</string>
+    <string name="no_data">Nema dostupnih podataka</string>
+
+    <string name="filter_options">Opcije filtriranja</string>
+    <string name="recent_refuels">Nedavna točenja</string>
+    <string name="estimated_range_label">Procijenjeni domet:</string>
+    <string name="range_format">Domet: ~%1$d km</string>
+    <string name="vehicle_range_calculator">Kalkulator dometa vozila</string>
+    <string name="range">Domet</string>
+    <string name="track_fuel_consumption_efficiently">Pratite potrošnju goriva efikasno</string>
+    <string name="track_fuel_and_expenses">Pratite potrošnju goriva i troškove</string>
+    <string name="helper_choose_vehicle">Odaberi iz svojih vozila</string>
+    <string name="helper_in_liters">u litrima</string>
+    <string name="helper_in_km">u KM</string>
+    <string name="helper_tap_to_select">dodirnite za odabir</string>
+    <string name="manage_vehicle_fleet">Upravljajte svojom flotom vozila</string>
+    <string name="your_vehicles">Vaša vozila</string>
+    <string name="vehicle_information">Informacije o vozilu</string>
+    <string name="fill_details_below">Popunite podatke ispod</string>
+    <string name="helper_select_fuel_type">Odaberite tip goriva</string>
+    <string name="logout_confirmation_title">Potvrda odjave</string>
+    <string name="logout_confirmation_message">Jeste li sigurni da se želite odjaviti?</string>
+</resources>

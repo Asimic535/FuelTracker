@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <!-- Login Fragment -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.fuel_tracker_app.ui.login.LoginFragment"
+        android:label="Prijava">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Register Fragment -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.fuel_tracker_app.ui.register.RegisterFragment"
+        android:label="Registracija">
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_register_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Home Fragment -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.fuel_tracker_app.ui.home.HomeFragment"
+        android:label="Početna">
+        <action
+            android:id="@+id/action_home_to_add_refuel"
+            app:destination="@id/addRefuelDialog" />
+    </fragment>
+
+    <!-- Vehicles Fragment -->
+    <fragment
+        android:id="@+id/vehiclesFragment"
+        android:name="com.example.fuel_tracker_app.ui.vehicles.VehiclesFragment"
+        android:label="Vozila">
+        <action
+            android:id="@+id/action_vehicles_to_edit_vehicle"
+            app:destination="@id/editVehicleFragment" />
+    </fragment>
+
+    <!-- Edit Vehicle Fragment -->
+    <fragment
+        android:id="@+id/editVehicleFragment"
+        android:name="com.example.fuel_tracker_app.ui.vehicles.EditVehicleFragment"
+        android:label="Izmeni vozilo">
+        <argument
+            android:name="vehicleId"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+
+    <!-- Settings Fragment -->
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.fuel_tracker_app.ui.settings.SettingsFragment"
+        android:label="Postavke">
+        <action
+            android:id="@+id/action_settings_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Add Refuel Dialog -->
+    <dialog
+        android:id="@+id/addRefuelDialog"
+        android:name="com.example.fuel_tracker_app.ui.vehicles.AddRefuelDialog"
+        android:label="Dodaj tankovanje">
+        <argument
+            android:name="vehicleId"
+            android:defaultValue=""
+            app:argType="string" />
+    </dialog>
+
+</navigation>
