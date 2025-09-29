@@ -1,16 +1,16 @@
 # FuelTracker
 
-Android aplikacija za praćenje tankovanja vozila napisana u Kotlin-u sa XML layout-ima.
+Android aplikacija za praćenje potrošnje goriva napisana u Kotlin-u sa XML layout-ima.
 
 ## Opis
 
 FuelTracker omogućava korisnicima da:
 - Dodaju i upravljaju svojim vozilima (marka, model, godina, snaga, tip goriva, potrošnja)
-- Prate tankovanja unošenjem ukupne cene i cene po litru (aplikacija automatski računa litre)
-- Pregledaju procenjeni domet vozila na osnovu potrošnje i tankovanja
-- Filtriraju podatke po vozilu i vremenskom periodu (mesec, godina, sve vreme)
+- Prate točenje unošenjem ukupne cijene i cijene po litru (aplikacija automatski računa litre)
+- Pregledaju procijenjeni domet vozila na osnovu potrošnje i točenja
+- Filtriraju podatke po vozilu i vremenskom razdoblju (mjesec, godina, svo vrijeme)
 - Koriste kalkulatore za potrebno gorivo i domet vozila
-- Pamte poslednju cenu goriva za brže unose
+- Pamte poslijednju cijenu goriva za brže unose
 - Pregledaju statistike ukupne potrošnje i troškova
 
 ## Tehnologija
@@ -22,58 +22,6 @@ FuelTracker omogućava korisnicima da:
 - **Navigacija**: Navigation Component + BottomNavigationView
 - **Backend**: Firebase Authentication + Cloud Firestore
 - **Min SDK**: 24 (Android 7.0)
-
-## Pokretanje aplikacije
-
-### Korak 1: Kreiranje Firebase projekta
-
-1. Idite na [Firebase Console](https://console.firebase.google.com/)
-2. Kliknite "Create a project" ili "Add project"
-3. Unesite naziv projekta (npr. "FuelTracker")
-4. Pratite korake čarobnjaka za kreiranje projekta
-
-### Korak 2: Konfiguracija Firebase Authentication
-
-1. U Firebase konzoli idite na Authentication > Sign-in method
-2. Omogućite "Email/Password" provider
-3. Kliknite "Save"
-
-### Korak 3: Konfiguracija Cloud Firestore
-
-1. U Firebase konzoli idite na Firestore Database
-2. Kliknite "Create database"
-3. Izaberite "Start in test mode" (privremeno za razvoj)
-4. Izaberite regiju najbližu vama
-5. Kliknite "Done"
-
-### Korak 4: Dodavanje Android aplikacije
-
-1. U Firebase konzoli kliknite na ikonu Android-a
-2. Unesite package name: `com.example.fuel_tracker_app`
-3. Unesite App nickname (opciono): "FuelTracker"
-4. Unesite SHA-1 (opciono, možete dodati kasnije)
-5. Kliknite "Register app"
-
-### Korak 5: Preuzimanje google-services.json
-
-1. Preuzmite `google-services.json` fajl
-2. Postavite ga u `app/` direktorijum vašeg Android projekta
-
-### Korak 6: Pokretanje aplikacije
-
-1. Otvorite projekat u Android Studio
-2. Syncujte gradle fajlove
-3. Pokrenite aplikaciju na emulatoru ili fizičkom uređaju
-
-### Korak 7: SHA-1 konfiguracija (opciono)
-
-Ako bude potrebno dodavanje SHA-1 fingerprint-a:
-
-```bash
-./gradlew signingReport
-```
-
-Kopirajte SHA-1 i SHA-256 vrednosti iz debug keystore-a i dodajte ih u Firebase konzoli.
 
 ## Struktura Firestore baze
 
@@ -99,9 +47,9 @@ vehicles/{vehicleId}
 refuels/{refuelId}
   ├── vehicleId: string (referenca na vozilo)
   ├── amount: number (količina u litrima)
-  ├── pricePerLiter: number (cena po litru)
-  ├── date: timestamp (datum tankovanja)
-  ├── estimatedRange: number (procenjeni domet)
+  ├── pricePerLiter: number (cijena po litru)
+  ├── date: timestamp (datum točenja)
+  ├── estimatedRange: number (procijenjeni domet)
   ├── vehicleMake: string (marka vozila)
   ├── vehicleModel: string (model vozila)
   ├── ownerId: string (ID vlasnika)
@@ -109,8 +57,8 @@ refuels/{refuelId}
   └── createdAt: timestamp
 ```
 
-## Bezbednost
+## Sigurnost
 
 - `google-services.json` fajl je dodat u `.gitignore` i neće biti commitovan
 - Firebase Firestore rules treba konfigurirati u Firebase konzoli za produkciju
-- Testne rules dozvoljavaju čitanje/pisanje samo autentifikovanim korisnicima
+- Testni rules dozvoljavaju čitanje/pisanje samo autentificiranim korisnicima
