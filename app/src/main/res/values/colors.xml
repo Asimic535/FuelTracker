@@ -14,7 +14,7 @@
 
     <!-- Accent Colors -->
     <color name="accent_green">#4CAF50</color>
-    <color name="accent_green_light">#81C784</color>
+    <color name="accent_green_light">#abe0ad</color>
     <color name="accent_red">#F44336</color>
     <color name="accent_red_light">#EF5350</color>
 

@@ -135,13 +135,13 @@ class AddRefuelDialog : DialogFragment() {
         if (totalCost != null && totalCost > 0 && pricePerLiter != null && pricePerLiter > 0) {
             val calculatedLiters = totalCost / pricePerLiter
             binding.layoutCalculations.visibility = View.VISIBLE
-            binding.tvCalculatedLiters.text = String.format(Locale.getDefault(), "%.2f L", calculatedLiters)
+            binding.tvCalculatedLiters.text = String.format(Locale.getDefault(), " %.2f L", calculatedLiters)
 
             // Izračunaj i prikaži procijenjeni domet
             val selectedVehicle = getSelectedVehicle()
             if (selectedVehicle != null && selectedVehicle.fuelConsumption > 0) {
                 val estimatedRange = selectedVehicle.calculateEstimatedRange(calculatedLiters)
-                binding.tvEstimatedRange.text = String.format(Locale.getDefault(), "~%.0f km", estimatedRange)
+                binding.tvEstimatedRange.text = String.format(Locale.getDefault(), " ~%.0f km", estimatedRange)
                 binding.tvRangeLabel.visibility = View.VISIBLE
                 binding.tvEstimatedRange.visibility = View.VISIBLE
             } else {

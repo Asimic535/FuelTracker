@@ -31,10 +31,10 @@ class EditVehicleFragment : Fragment() {
     // Lista tipova goriva
     private val fuelTypes by lazy {
         listOf(
-            getString(R.string.gasoline),
             getString(R.string.diesel),
-            getString(R.string.hybrid),
+            getString(R.string.gasoline),
             getString(R.string.electric),
+            getString(R.string.hybrid),
             getString(R.string.lpg),
             "CNG"
         )

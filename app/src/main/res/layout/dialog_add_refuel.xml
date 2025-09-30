@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_micro"
-                android:text="Track your fuel consumption and expenses"
+                android:text="Popunite polja za unos"
                 android:textAppearance="@style/TextAppearance.FuelTracker.Caption" />
 
         </LinearLayout>

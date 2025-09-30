@@ -80,7 +80,7 @@
                     android:text="@string/vehicle_information"
                     android:textAppearance="@style/TextAppearance.FuelTracker.Title" />
 
-                <!-- Make & Model Row -->
+                <!-- Marka i model Row -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                         android:layout_marginEnd="@dimen/spacing_small"
                         android:layout_weight="1"
                         android:hint="@string/vehicle_make"
-                        app:helperText="e.g. Volkswagen"
+                        app:helperText="npr. Škoda"
                         app:startIconDrawable="@drawable/ic_business">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -115,7 +115,7 @@
                         android:layout_marginStart="@dimen/spacing_small"
                         android:layout_weight="1"
                         android:hint="@string/vehicle_model"
-                        app:helperText="e.g. Golf"
+                        app:helperText="npr. Superb"
                         app:startIconDrawable="@drawable/ic_directions_car">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -129,7 +129,7 @@
 
                 </LinearLayout>
 
-                <!-- Year & Power Row -->
+                <!-- Godina i snaga Row -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
                         android:layout_marginEnd="@dimen/spacing_small"
                         android:layout_weight="1"
                         android:hint="@string/vehicle_year"
-                        app:helperText="1900-2030"
+                        app:helperText="od 1960."
                         app:startIconDrawable="@drawable/ic_calendar_today">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -165,7 +165,7 @@
                         android:layout_marginStart="@dimen/spacing_small"
                         android:layout_weight="1"
                         android:hint="@string/vehicle_power"
-                        app:helperText="in kW"
+                        app:helperText="u kilovatima"
                         app:startIconDrawable="@drawable/ic_speed">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -187,7 +187,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_medium"
                     android:hint="@string/fuel_consumption"
-                    app:helperText="L/100km (optional)"
+                    app:helperText="u L/100km (opcionalno)"
                     app:startIconDrawable="@drawable/ic_local_gas_station">
 
                     <com.google.android.material.textfield.TextInputEditText
