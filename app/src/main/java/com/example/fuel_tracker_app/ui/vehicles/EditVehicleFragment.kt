@@ -71,14 +71,14 @@ class EditVehicleFragment : Fragment() {
         binding.actvFuelType.setAdapter(adapter)
     }
 
-    // Podesi real-time konverziju kW u konjske snage
+    // Podesi real-time pretvorbu kW u konjske snage
     private fun setupPowerConversion() {
         binding.etPower.setOnFocusChangeListener { _, _ ->
             updateHorsepowerDisplay()
         }
     }
 
-    // Ažuriraj prikaz konjskih snaga na osnovu unetih kW
+    // Ažuriraj prikaz konjskih snaga na osnovu unijetih kW
     private fun updateHorsepowerDisplay() {
         val powerText = binding.etPower.text.toString().trim()
         if (powerText.isNotEmpty()) {
@@ -103,7 +103,7 @@ class EditVehicleFragment : Fragment() {
             }
         }
 
-        // Dugme za otkazivanje - vraća korisnika na prethodnji ekran
+        // Dugme za otkazivanje - vraća korisnika na prethodni ekran
         binding.btnCancel.setOnClickListener {
             findNavController().navigateUp()
         }

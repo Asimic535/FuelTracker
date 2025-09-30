@@ -29,7 +29,7 @@ class LoginViewModel : ViewModel() {
         }
     }
 
-    // Resetuj stanje
+    // Resetiraj stanje
     fun resetState() {
         _loginState.value = null
     }

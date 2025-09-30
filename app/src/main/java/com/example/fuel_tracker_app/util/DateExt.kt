@@ -8,12 +8,12 @@ import java.util.*
 object DateExt {
     private val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
 
-    // Konvertuj Timestamp u String
+    // Konvertiraj Timestamp u String
     fun Timestamp.toDateString(): String {
         return dateFormat.format(this.toDate())
     }
 
-    // Dobij početak tekućeg meseca
+    // Dobij početak tekućeg mjeeseca
     fun getStartOfCurrentMonth(): Timestamp {
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.DAY_OF_MONTH, 1)
@@ -24,7 +24,7 @@ object DateExt {
         return Timestamp(calendar.time)
     }
 
-    // Dobij kraj tekućeg meseca
+    // Dobij kraj tekućeg mjeeseca
     fun getEndOfCurrentMonth(): Timestamp {
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(Calendar.DAY_OF_MONTH))

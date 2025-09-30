@@ -44,7 +44,7 @@ class RangeCalculatorDialog : DialogFragment() {
     private fun setupVehicleInfo() {
         binding.tvVehicleInfo.text = "${vehicle.getDisplayTitle()}\n${vehicle.getConsumptionDisplay()}"
 
-        // Ako vozilo nema definisanu potrošnju, onemogući kalkulaciju
+        // Ako vozilo nema definiranu potrošnju, onemogući kalkulaciju
         if (vehicle.fuelConsumption <= 0) {
             binding.etFuelAmount.isEnabled = false
             binding.btnCalculate.isEnabled = false

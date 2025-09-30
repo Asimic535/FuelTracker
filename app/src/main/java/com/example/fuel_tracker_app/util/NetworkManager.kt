@@ -14,7 +14,7 @@ class NetworkManager(private val context: Context) {
     private val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
     /**
-     * Proverava da li je uređaj trenutno povezan na internet
+     * Provjeerava da li je uređaj trenutno povezan na internet
      */
     fun isConnected(): Boolean {
         val network = connectivityManager.activeNetwork ?: return false
@@ -29,7 +29,7 @@ class NetworkManager(private val context: Context) {
     }
 
     /**
-     * Osluškuje promene u network konekciji
+     * Osluškuje promjeene u network konekciji
      */
     fun observeNetworkConnectivity(): Flow<Boolean> = callbackFlow {
         val networkCallback = object : ConnectivityManager.NetworkCallback() {

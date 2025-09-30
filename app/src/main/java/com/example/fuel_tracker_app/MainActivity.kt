@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         // Podesi bottom navigation sa nav controller
         binding.bottomNavigation.setupWithNavController(navController)
 
-        // Slušaj promene destinacije da bi pokazao/sakrio bottom navigation
+        // Slušaj promjeene destinacije da bi pokazao/sakrio bottom navigation
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.loginFragment,
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Proveri da li je korisnik prijavljen
+    // Provjeeri je li korisnik prijavljen
     private fun checkUserAuthentication() {
         val currentUser = auth.currentUser
         val navHostFragment = supportFragmentManager
@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        // Proveri ponovo kada se aktivnost pokrene
+        // Provjeeri ponovo kada se aktivnost pokrene
         // (korisno ako se korisnik odjavi iz druge aktivnosti)
         val currentUser = auth.currentUser
         if (currentUser == null) {

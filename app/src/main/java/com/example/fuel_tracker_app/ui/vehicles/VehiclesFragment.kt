@@ -49,12 +49,12 @@ class VehiclesFragment : Fragment() {
 
         vehiclesAdapter = VehiclesAdapter(
             onEditClick = { vehicle ->
-                // Svi prikazani vozila su korisnikova, pa uvek dozvoli edit
+                // Svi prikazani vozila su korisnikova, pa uvijek dozvoli edit
                 val bundle = bundleOf("vehicleId" to vehicle.id)
                 findNavController().navigate(R.id.action_vehicles_to_edit_vehicle, bundle)
             },
             onDeleteClick = { vehicle ->
-                // Svi prikazani vozila su korisnikova, pa uvek dozvoli brisanje
+                // Sva prikazana vozila su korisnikova, pa uvijek dozvoli brisanje
                 showDeleteConfirmDialog(vehicle)
             },
             onToggleVisibilityClick = { vehicle ->
@@ -62,7 +62,7 @@ class VehiclesFragment : Fragment() {
                 Toast.makeText(requireContext(), "All vehicles are private by default", Toast.LENGTH_SHORT).show()
             },
             onQuickRefuelClick = { vehicle ->
-                // Brzo dodavanje tankovanja
+                // Brzo dodavanje točenja
                 val bundle = bundleOf("vehicleId" to vehicle.id)
                 findNavController().navigate(R.id.addRefuelDialog, bundle)
             },
@@ -93,7 +93,7 @@ class VehiclesFragment : Fragment() {
 
     }
 
-    // Posmatraj promene u ViewModel-u i ažuriraj UI
+    // Posmatraj promjene u ViewModel-u i ažuriraj UI
     private fun observeViewModel() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.vehicles.collect { vehicles ->

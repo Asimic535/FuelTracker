@@ -55,7 +55,7 @@ class RegisterFragment : Fragment() {
         }
     }
 
-    // Posmatraj promene u ViewModel-u
+    // Posmatraj promjene u ViewModel-u
     private fun observeViewModel() {
         lifecycleScope.launch {
             viewModel.isLoading.collect { isLoading ->

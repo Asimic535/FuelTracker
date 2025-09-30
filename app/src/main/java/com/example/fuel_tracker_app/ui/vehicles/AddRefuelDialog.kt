@@ -27,7 +27,7 @@ class AddRefuelDialog : DialogFragment() {
     private var _binding: DialogAddRefuelBinding? = null
     private val binding get() = _binding!!
 
-    // Koristi HomeViewModel sa dosegom aktivnosti za deljenje podataka
+    // Koristi HomeViewModel sa dosegom aktivnosti za dijeljenje podataka
     private val homeViewModel: HomeViewModel by activityViewModels()
     private val args: AddRefuelDialogArgs by navArgs()
 
@@ -35,7 +35,7 @@ class AddRefuelDialog : DialogFragment() {
     private var selectedDate: Date = Date()
     private val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
 
-    // SharedPreferences za pamćenje poslednje cene goriva
+    // SharedPreferences za pamćenje poslednje cijene goriva
     private val PREFS_NAME = "fuel_tracker_prefs"
     private val LAST_FUEL_PRICE_KEY = "last_fuel_price"
     private val LAST_TOTAL_COST_KEY = "last_total_cost"
@@ -137,7 +137,7 @@ class AddRefuelDialog : DialogFragment() {
             binding.layoutCalculations.visibility = View.VISIBLE
             binding.tvCalculatedLiters.text = String.format(Locale.getDefault(), "%.2f L", calculatedLiters)
 
-            // Izračunaj i prikaži procenjeni domet
+            // Izračunaj i prikaži procijenjeni domet
             val selectedVehicle = getSelectedVehicle()
             if (selectedVehicle != null && selectedVehicle.fuelConsumption > 0) {
                 val estimatedRange = selectedVehicle.calculateEstimatedRange(calculatedLiters)
@@ -169,7 +169,7 @@ class AddRefuelDialog : DialogFragment() {
         binding.actvVehicle.setAdapter(adapter)
         binding.btnSave.isEnabled = true
 
-        // Unapred selektuj vozilo ako je prosleđeno kroz argumente
+        // Unaprijed odaberi vozilo ako je prosljeđeno kroz argumente
         if (args.vehicleId.isNotEmpty()) {
             val vehicleIndex = vehicles.indexOfFirst { it.id == args.vehicleId }
             if (vehicleIndex >= 0) {
@@ -188,7 +188,7 @@ class AddRefuelDialog : DialogFragment() {
         binding.tilVehicle.error = null
         binding.tilPricePerLiter.error = null
 
-        // Validacija ukupne cene
+        // Validacija ukupne cijene
         if (totalCostText.isBlank()) {
             binding.tilTotalCost.error = getString(R.string.field_required)
             return false
@@ -217,7 +217,7 @@ class AddRefuelDialog : DialogFragment() {
             return false
         }
 
-        // Validacija cene po litru
+        // Validacija cijene po litru
         val pricePerLiterText = binding.etPricePerLiter.text.toString()
         if (pricePerLiterText.isBlank()) {
             binding.tilPricePerLiter.error = getString(R.string.field_required)
@@ -233,7 +233,7 @@ class AddRefuelDialog : DialogFragment() {
         return true
     }
 
-    // Dobij selektovano vozilo
+    // Dobij odabrano vozilo
     private fun getSelectedVehicle(): Vehicle? {
         val vehicleSelection = binding.actvVehicle.text.toString()
         return vehicles.find { vehicle ->
@@ -241,13 +241,13 @@ class AddRefuelDialog : DialogFragment() {
         }
     }
 
-    // Sačuvaj tankovanje
+    // Sačuvaj točenje
     private fun saveRefuel() {
         val selectedVehicle = getSelectedVehicle() ?: return
         val totalCost = binding.etTotalCost.text.toString().toDoubleOrNull() ?: return
         val pricePerLiter = binding.etPricePerLiter.text.toString().toDoubleOrNull() ?: return
 
-        // Izračunaj količinu litara iz ukupne cene i cene po litru
+        // Izračunaj količinu litara iz ukupne cijene i cijene po litru
         val calculatedAmount = totalCost / pricePerLiter
 
         binding.progressBar.visibility = View.VISIBLE
@@ -262,10 +262,10 @@ class AddRefuelDialog : DialogFragment() {
 
         homeViewModel.addRefuel(refuel)
 
-        // Sačuvaj poslednje vrednosti za sledeći put
+        // Sačuvaj poslijednje vrijednosti za sljedeći put
         saveLastValues(totalCost, pricePerLiter)
 
-        // Zatvori dijalog nakon uspešnog čuvanja
+        // Zatvori dijalog nakon uspiješnog čuvanja
         lifecycleScope.launch {
             // Sačekaj trenutak da se operacija završi
             kotlinx.coroutines.delay(500)
@@ -275,7 +275,7 @@ class AddRefuelDialog : DialogFragment() {
         }
     }
 
-    // Učitaj poslednje vrednosti iz SharedPreferences
+    // Učitaj poslednje vrijednosti iz SharedPreferences
     private fun loadLastValues() {
         val prefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val lastPrice = prefs.getFloat(LAST_FUEL_PRICE_KEY, 0f)
@@ -290,7 +290,7 @@ class AddRefuelDialog : DialogFragment() {
         }
     }
 
-    // Sačuvaj poslednje vrednosti u SharedPreferences
+    // Sačuvaj posljednje vrijednosti u SharedPreferences
     private fun saveLastValues(totalCost: Double, pricePerLiter: Double) {
         val prefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         prefs.edit()

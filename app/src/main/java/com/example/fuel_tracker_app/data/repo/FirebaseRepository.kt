@@ -154,7 +154,7 @@ class FirebaseRepository {
         }
     }
 
-    // Ažuriranje postojećeg vozila (samo vlasnik može da ažurira) - SA VALIDACIJOM
+    // Ažuriranje postojećeg vozila (samo vlasnik može ažurirati) - SA VALIDACIJOM
     suspend fun updateVehicle(vehicle: Vehicle, currentUserId: String): Result<Unit> {
         return try {
 
@@ -192,7 +192,7 @@ class FirebaseRepository {
         }
     }
 
-    // Brisanje vozila i svih njegovih tankovanja (samo vlasnik može da briše) - ATOMSKA OPERACIJA
+    // Brisanje vozila i svih njegovih točenja (samo vlasnik može brisati)
     suspend fun deleteVehicle(vehicleId: String, currentUserId: String): Result<Unit> {
         return try {
 
@@ -201,7 +201,7 @@ class FirebaseRepository {
                 return Result.Error(Exception("Invalid vehicle ID or user ID"))
             }
 
-            // Prvo dobij sva tankovanja za ovo vozilo (van transakcije)
+            // Prvo dobij sva točenja za ovo vozilo (van transakcije)
             val refuelsSnapshot = firestore.collection("refuels")
                 .whereEqualTo("vehicleId", vehicleId)
                 .get()
@@ -224,7 +224,7 @@ class FirebaseRepository {
                     throw Exception("You can only delete your own vehicles")
                 }
 
-                // Obriši sva tankovanja prvo
+                // Obriši sva točenja prvo
                 refuelsSnapshot.documents.forEach { refuelDoc ->
                     transaction.delete(refuelDoc.reference)
                 }
@@ -239,7 +239,7 @@ class FirebaseRepository {
         }
     }
 
-    // Dodavanje novog tankovanja u globalnu kolekciju sa informacijama o vlasniku - SA VALIDACIJOM
+    // Dodavanje novog točenja u globalnu kolekciju sa informacijama o vlasniku - SA VALIDACIJOM
     suspend fun addRefuel(refuel: Refuel): Result<String> {
         return try {
             // Validacija ulaznih podataka
@@ -275,7 +275,7 @@ class FirebaseRepository {
         }
     }
 
-    // Pretplaćivanje na tankovanja sa filtriranjem, prikazuje tankovanja svih javnih vozila i korisničkih privatnih vozila
+    // Pretplaćivanje na točenja sa filtriranjem, prikazuje točenja svih korisničkih vozila
     fun streamRefuelsFiltered(
         currentUserId: String,
         vehicleIdOrNull: String?,
@@ -283,7 +283,7 @@ class FirebaseRepository {
         toDateOrNull: Timestamp?,
         showOnlyMyRefuels: Boolean = false
     ): Flow<List<Refuel>> = callbackFlow {
-        // Jednostavan upit koji ne zahteva složene indekse
+        // Jednostavan upit koji ne zahtjeeva složene indekse
         val query: Query = if (showOnlyMyRefuels) {
             firestore.collection("refuels")
                 .whereEqualTo("ownerId", currentUserId)

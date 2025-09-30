@@ -59,12 +59,12 @@
     <string name="invalid_price">Unesite ispravnu cijenu</string>
     <string name="max_price_per_liter">Maksimalna cijena je 10 KM/L</string>
     <string name="max_total_cost">Maksimalna ukupna cijena je 10.000 KM</string>
-    <string name="helper_total_cost">ukupna cijena tankovanja</string>
+    <string name="helper_total_cost">ukupna cijena točenja</string>
 
     <!-- Home Screen -->
     <string name="welcome">Dobrodošli, %1$s!</string>
     <string name="total_fuel">Ukupno goriva</string>
-    <string name="filter_period">Filtriraj po periodu</string>
+    <string name="filter_period">Filtriraj po razdoblju</string>
     <string name="filter_vehicle">Filtriraj po vozilu</string>
     <string name="all_vehicles">Sva vozila</string>
     <string name="this_month">Ovaj mjesec</string>

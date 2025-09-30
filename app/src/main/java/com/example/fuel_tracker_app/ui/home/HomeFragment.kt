@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
         observeViewModel()
     }
 
-    // Podešavanje RecyclerView-a za prikaz tankovanja
+    // Podešavanje RecyclerView-a za prikaz točenja
     private fun setupRecyclerView() {
         refuelAdapter = RefuelAdapter()
         binding.rvRefuels.apply {
@@ -105,9 +105,9 @@ class HomeFragment : Fragment() {
         dialog.show(parentFragmentManager, RangeCalculatorDialog.TAG)
     }
 
-    // Posmatraj promene u ViewModel-u i ažuriraj UI
+    // Posmatraj promjene u ViewModel-u i ažuriraj UI
     private fun observeViewModel() {
-        // Posmatraj promene u profilu korisnika i prikaži dobrodošlicu
+        // Posmatraj promjene u profilu korisnika i prikaži dobrodošlicu
         lifecycleScope.launch {
             viewModel.userProfile.collect { profile ->
                 profile?.let {
@@ -125,7 +125,7 @@ class HomeFragment : Fragment() {
             }
         }
 
-        // Posmatraj listu tankovanja i prikaži ih u RecyclerView-u
+        // Posmatraj listu točenja i prikaži ih u RecyclerView-u
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.refuels.collect { refuels ->
                 if (_binding == null) return@collect

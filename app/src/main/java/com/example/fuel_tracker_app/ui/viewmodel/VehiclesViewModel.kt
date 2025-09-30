@@ -153,7 +153,7 @@ class VehiclesViewModel : ViewModel() {
     // Dobijanje ID-ja trenutnog korisnika
     fun getCurrentUserId(): String? = repository.currentUserId()
 
-    // Resetovanje stanja operacije
+    // Resetiranje stanja operacije
     fun resetOperationState() {
         _operationState.value = null
     }

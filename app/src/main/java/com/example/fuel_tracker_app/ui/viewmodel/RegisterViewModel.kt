@@ -17,7 +17,7 @@ class RegisterViewModel : ViewModel() {
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> = _isLoading
 
-    // Registruj novog korisnika
+    // Registriraj novog korisnika
     fun register(name: String, email: String, password: String) {
         viewModelScope.launch {
             _isLoading.value = true
@@ -29,7 +29,7 @@ class RegisterViewModel : ViewModel() {
         }
     }
 
-    // Resetuj stanje
+    // Resetiraj stanje
     fun resetState() {
         _registerState.value = null
     }

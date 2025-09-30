@@ -19,7 +19,7 @@ import kotlinx.coroutines.Job
 data class FilterState(
     val period: String = "all-time", // Zadati filter perioda
     val selectedVehicleId: String? = null, // null znači "Sva vozila"
-    val showOnlyMyRefuels: Boolean = true // prikazuj samo korisnikova tankovanja
+    val showOnlyMyRefuels: Boolean = true // prikazuj samo korisnikova točenja
 )
 
 class HomeViewModel : ViewModel() {
@@ -66,7 +66,7 @@ class HomeViewModel : ViewModel() {
                 else -> {}
             }
 
-            // Prekidanje prethodnog posla za vozila radi sprečavanja curenja memorije
+            // Prekidanje prethodnog posla za vozila radi sprječavanja curenja memorije
             vehiclesJob?.cancel()
 
             vehiclesJob = launch {
@@ -81,15 +81,15 @@ class HomeViewModel : ViewModel() {
             }
         }
 
-        // Učitavanje tankovanja na osnovu trenutnog filtera
+        // Učitavanje točenja na osnovu trenutnog filtera
         loadRefuelsWithFilter()
     }
 
-    // Učitavanje tankovanja na osnovu trenutno postavljenog filtera
+    // Učitavanje točenja na osnovu trenutno postavljenog filtera
     private fun loadRefuelsWithFilter() {
         val uid = repository.currentUserId() ?: return
 
-        // Prekidanje prethodnog posla radi sprečavanja curenja memorije
+        // Prekidanje prethodnog posla radi sprječavanja curenja memorije
         refuelsJob?.cancel()
 
         refuelsJob = viewModelScope.launch {
@@ -117,19 +117,19 @@ class HomeViewModel : ViewModel() {
         }
     }
 
-    // Ažuriranje filtera za vremenski period (mesec, godina, sve vreme)
+    // Ažuriranje filtera za vremenski period (mjesec, godina, svo vrijeme)
     fun updatePeriodFilter(period: String) {
         _filterState.value = _filterState.value.copy(period = period)
         loadRefuelsWithFilter()
     }
 
-    // Ažuriranje filtera za vozilo (prikaz tankovanja za određeno vozilo)
+    // Ažuriranje filtera za vozilo (prikaz točenja za određeno vozilo)
     fun updateVehicleFilter(vehicleId: String?) {
         _filterState.value = _filterState.value.copy(selectedVehicleId = vehicleId)
         loadRefuelsWithFilter()
     }
 
-    // Prebacivanje između prikaza samo mojih tankovanja ili svih tankovanja
+    // Prebacivanje između prikaza samo mojih točenja ili svih točenja
     fun toggleRefuelOwnerFilter() {
         _filterState.value = _filterState.value.copy(
             showOnlyMyRefuels = !_filterState.value.showOnlyMyRefuels
@@ -155,7 +155,7 @@ class HomeViewModel : ViewModel() {
         }
     }
 
-    // Dodavanje novog tankovanja sa proširenim podacima
+    // Dodavanje novog točenja sa proširenim podacima
     fun addRefuel(refuel: Refuel) {
         val uid = repository.currentUserId() ?: return
         val userProfile = _userProfile.value
@@ -166,7 +166,7 @@ class HomeViewModel : ViewModel() {
                 is Result.Success -> {
                     val vehicle = vehicleResult.data
 
-                    // Izračunaj doseg ako vozilo ima definisanu potrošnju
+                    // Izračunaj doseg ako vozilo ima definiranu potrošnju
                     val estimatedRange = if (vehicle?.fuelConsumption != null && vehicle.fuelConsumption > 0) {
                         Refuel.calculateEstimatedRange(refuel.amount, vehicle.fuelConsumption)
                     } else {
@@ -185,7 +185,7 @@ class HomeViewModel : ViewModel() {
 
                     when (val result = repository.addRefuel(refuelWithCompleteData)) {
                         is Result.Error -> _errorState.value = "Error adding refuel: ${result.exception.message}"
-                        else -> {} // Uspeh će biti automatski prikazan kroz stream
+                        else -> {} // Uspijeh će biti automatski prikazan kroz stream
                     }
                 }
                 is Result.Error -> _errorState.value = "Error getting vehicle info: ${vehicleResult.exception.message}"
@@ -194,7 +194,7 @@ class HomeViewModel : ViewModel() {
         }
     }
 
-    // Dobijanje ID-ja trenutno ulogovanog korisnika
+    // Dobijanje ID-ja trenutno ulogiranog korisnika
     fun getCurrentUserId(): String? = repository.currentUserId()
 
     // Čišćenje greške iz stanja

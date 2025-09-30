@@ -6,7 +6,7 @@ import com.example.fuel_tracker_app.data.repo.FirebaseRepository
 class SettingsViewModel : ViewModel() {
     private val repository = FirebaseRepository()
 
-    // Izloguj korisnika
+    // Izlogiraj korisnika
     fun logout() {
         repository.authSignOut()
     }

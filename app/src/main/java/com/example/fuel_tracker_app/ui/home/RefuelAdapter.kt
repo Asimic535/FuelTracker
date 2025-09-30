@@ -51,7 +51,7 @@ class RefuelAdapter : ListAdapter<Refuel, RefuelAdapter.RefuelViewHolder>(Refuel
             // Prikaži informacije o vozilu
             binding.tvVehicle.text = refuel.getVehicleDisplay()
 
-            // Prikaži procenjeni domet u posebnom TextView-u
+            // Prikaži procijenjeni domet u posebnom TextView-u
             if (refuel.estimatedRange > 0) {
                 binding.tvEstimatedRange.text = String.format(
                     binding.root.context.getString(com.example.fuel_tracker_app.R.string.range_format),
@@ -67,11 +67,11 @@ class RefuelAdapter : ListAdapter<Refuel, RefuelAdapter.RefuelViewHolder>(Refuel
             binding.tvDate.text = dateFormat.format(date)
             binding.tvTime.text = timeFormat.format(date)
 
-            // Promeni boju ikone na osnovu troškova
-            if (refuel.totalCost > 100) {
+            // Promjeni boju ikone na osnovu troškova
+            if (refuel.totalCost > 99) {
                 // Crvena za skupe refuels (preko 100 KM)
                 binding.iconBackground.setBackgroundResource(com.example.fuel_tracker_app.R.drawable.circle_background_red)
-            } else if (refuel.totalCost > 50) {
+            } else if (refuel.totalCost > 49) {
                 // Narandžasta za srednje refuels (50-100 KM)
                 binding.iconBackground.setBackgroundResource(com.example.fuel_tracker_app.R.drawable.circle_background_orange)
             } else {

@@ -34,7 +34,7 @@ data class Vehicle(
         return (fuelConsumption * kilometers) / 100.0
     }
 
-    // Funkcija za izračun procenjenog dometa na osnovu količine goriva
+    // Funkcija za izračun procijenjenog dometa na osnovu količine goriva
     fun calculateEstimatedRange(fuelAmount: Double): Double {
         if (fuelConsumption <= 0) return 0.0
         return (fuelAmount * 100.0) / fuelConsumption
@@ -44,12 +44,12 @@ data class Vehicle(
     fun getConsumptionDisplay(): String = if (fuelConsumption > 0) {
         "${String.format("%.1f", fuelConsumption)} L/100km"
     } else {
-        "Consumption not defined"
+        "Potrošnja nije definirana"
     }
 
     // Konverzija kW u konjske snage (KS)
     fun getPowerInHorsepower(): Int = (powerKw * 1.36).toInt()
 
-    // Prikaz snage sa oba mernim jedinicama
-    fun getPowerDisplay(): String = "$powerKw kW (${getPowerInHorsepower()} KS)"
+    // Prikaz snage sa oba mjernim jedinicama
+    fun getPowerDisplay(): String = "${getPowerInHorsepower()} KS"
 }
