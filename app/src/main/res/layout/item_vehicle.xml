@@ -113,7 +113,7 @@
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/consumptionCard"
                         android:layout_width="wrap_content"
-                        android:layout_height="24dp"
+                        android:layout_height="28dp"
                         android:layout_marginEnd="8dp"
                         app:cardBackgroundColor="#E8F5E9"
                         app:cardCornerRadius="12dp"
@@ -122,14 +122,14 @@
 
                         <TextView
                             android:id="@+id/tvConsumption"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:paddingHorizontal="10dp"
+                            android:paddingHorizontal="6dp"
                             android:textColor="@color/accent_green"
-                            android:textSize="11sp"
+                            android:textSize="12sp"
                             android:textStyle="bold"
-                            tools:text="7.5 L/100km" />
+                            tools:text="11.1 L/100km" />
 
                     </com.google.android.material.card.MaterialCardView>
 
