@@ -82,7 +82,7 @@ class RangeCalculatorDialog : DialogFragment() {
 
         val fuelAmount = fuelAmountText.toDoubleOrNull()
         if (fuelAmount == null || fuelAmount <= 0) {
-            binding.tilFuelAmount.error = "Enter valid fuel amount"
+            binding.tilFuelAmount.error = "Unesite ispravnu količinu"
             binding.tvResult.visibility = View.GONE
             return
         }

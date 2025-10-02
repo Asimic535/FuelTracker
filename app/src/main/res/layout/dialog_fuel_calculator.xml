@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/spacing_medium"
         android:hint="@string/distance_km"
-        app:helperText="Enter the distance you plan to travel"
+        app:helperText="Unesite željenu udaljenost"
         app:startIconDrawable="@drawable/ic_speed">
 
         <com.google.android.material.textfield.TextInputEditText

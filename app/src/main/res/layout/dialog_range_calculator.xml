@@ -39,8 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/spacing_medium"
-        android:hint="Fuel Amount (L)"
-        app:helperText="Enter how much fuel you have"
+        android:hint="Količina goriva (L)"
+        app:helperText="Unesite koliko imate goriva u vozilu"
         app:startIconDrawable="@drawable/ic_local_gas_station">
 
         <com.google.android.material.textfield.TextInputEditText

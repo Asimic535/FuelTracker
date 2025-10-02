@@ -138,7 +138,7 @@
     <string name="helper_choose_vehicle">Odaberite vozilo u koje točite gorivo</string>
     <string name="helper_in_liters">u litrima</string>
     <string name="helper_in_km">Cijena po litru</string>
-    <string name="helper_tap_to_select">dodirnite za odabir</string>
+    <string name="helper_tap_to_select">Dodirnite za odabir</string>
     <string name="manage_vehicle_fleet">Upravljajte svojom flotom vozila</string>
     <string name="your_vehicles">Vaša vozila</string>
     <string name="vehicle_information">Informacije o vozilu</string>
